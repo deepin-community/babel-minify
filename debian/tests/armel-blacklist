@@ -1,0 +1,8 @@
+packages/babel-plugin-minify-guarded-expressions/__tests__/index.js
+packages/babel-plugin-minify-numeric-literals/__tests__/index.js
+packages/babel-plugin-minify-replace/__tests__/replace-test.js
+packages/babel-plugin-transform-member-expression-literals/__tests__/index.js
+packages/babel-plugin-transform-minify-booleans/__tests__/index.js
+packages/babel-plugin-transform-regexp-constructors/__tests__/index.js
+packages/babel-plugin-transform-simplify-comparison-operators/__tests__/index.js
+packages/babel-plugin-transform-undefined-to-void/__tests__/index.js

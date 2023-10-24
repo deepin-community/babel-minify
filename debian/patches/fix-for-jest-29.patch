@@ -1,0 +1,19 @@
+Description: add fix for jest 29
+ Snapshot format changed
+Author: Yadd <yadd@debian.org>
+Forwarded: no
+Last-Update: 2022-10-10
+
+--- a/package.json
++++ b/package.json
+@@ -57,6 +57,10 @@
+     "yarn": ">=1"
+   },
+   "jest": {
++    "snapshotFormat": {
++      "escapeString": true,
++      "printBasicPrototype": true
++    },
+     "transform": {
+       "^.+\\.js$": "babel-jest"
+     },
