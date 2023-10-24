@@ -1,0 +1,25 @@
+Description: drop __proto__ use
+Author: Yadd <yadd@debian.org>
+Forwarded: https://github.com/ljharb/util.promisify/issues/26
+Last-Update: 2022-09-14
+
+--- a/util-promisify/implementation.js
++++ b/util-promisify/implementation.js
+@@ -4,7 +4,7 @@
+ 
+ var isES5 = typeof Object.defineProperty === 'function';
+ 
+-var hasProto = [].__proto__ === Array.prototype; // eslint-disable-line no-proto
++var hasProto = Object.getPrototypeOf([]) === Array.prototype
+ 
+ if (!isES5 || !hasProto) {
+ 	throw new TypeError('util.promisify requires a true ES5 environment, that also supports `__proto__`');
+@@ -75,7 +75,7 @@
+ 		});
+ 	};
+ 
+-	promisified.__proto__ = orig.__proto__; // eslint-disable-line no-proto
++	Object.setPrototypeOf(promisified, orig.__proto__);
+ 
+ 	Object.defineProperty(promisified, kCustomPromisifiedSymbol, {
+ 		configurable: true,

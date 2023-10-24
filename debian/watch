@@ -1,0 +1,34 @@
+version=4
+opts=\
+repacksuffix=+dfsg,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.]*@ARCHIVE_EXT@)/babel-minify-$1/ \
+ https://github.com/babel/minify/tags .*?/babel-minify\@([\d\.]+)@ARCHIVE_EXT@ group
+
+opts=\
+component=util-promisify,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-util.promisify-$1/ \
+ https://github.com/ljharb/util.promisify/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=object-getownpropertydescriptors,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-object.getownpropertydescriptors-$1/ \
+ https://github.com/es-shims/object.getownpropertydescriptors/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=array-prototype-reduce,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-Array.prototype.reduce-$1/ \
+ https://github.com/es-shims/Array.prototype.reduce/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=es-array-method-boxes-properly,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-es-array-method-boxes-properly-$1/ \
+ https://github.com/ljharb/es-array-method-boxes-properly/tags .*/archive.*/v?([\d\.]+).tar.gz checksum

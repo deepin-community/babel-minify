@@ -1,0 +1,9 @@
+if test "$AUTOPKGTEST_TMP" != ""; then
+	LIST=`cat debian/tests/valid_tests|grep -v packages/babel-plugin-minify-replace/__tests__/replace-test.js`
+else
+	LIST=`cat debian/tests/valid_tests`
+fi
+if --print-architecture|grep armel; then
+	LIST=`cat debian/tests/valid_tests|grep -v -f debian/tests/armel-blacklist`
+fi
+jest --ci -u $LIST

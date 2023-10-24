@@ -1,0 +1,23 @@
+Description: increase test timeout for armel
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-10-22
+
+--- a/packages/babel-minify/__tests__/cli-tests.js
++++ b/packages/babel-minify/__tests__/cli-tests.js
+@@ -1,5 +1,5 @@
+ jest.autoMockOff();
+-jest.setTimeout(25000);
++jest.setTimeout(500000);
+ 
+ const { spawn } = require("child_process");
+ const path = require("path");
+--- a/utils/test-runner/src/index.js
++++ b/utils/test-runner/src/index.js
+@@ -1,5 +1,5 @@
+ /* eslint-disable no-console */
+-jest.setTimeout(25000);
++jest.setTimeout(500000);
+ const fs = require("./fs");
+ const path = require("path");
+ const babel = require("@babel/core");
